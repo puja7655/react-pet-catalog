@@ -1,0 +1,207 @@
+diff --git a/pet-catalog/public/index.html b/pet-catalog/public/index.html
+index aa069f2..34892d1 100644
+--- a/pet-catalog/public/index.html
++++ b/pet-catalog/public/index.html
+@@ -28,6 +28,7 @@
+   </head>
+   <body>
+     <noscript>You need to enable JavaScript to run this app.</noscript>
++    <div id="modal"></div>
+     <div id="root"></div>
+     <!--
+       This HTML file is a template.
+diff --git a/pet-catalog/src/App.js b/pet-catalog/src/App.js
+index aee0e66..a2f357d 100644
+--- a/pet-catalog/src/App.js
++++ b/pet-catalog/src/App.js
+@@ -1,9 +1,9 @@
+ import { createBrowserRouter, Router, RouterProvider } from 'react-router-dom'
+ import RootOutlet from './components/pages/Root';
+ import Admin from './components/pages/Admin';
+-import PetsContainer from './components/pages/PetsContainer';
++import PetsContainer from './components/pages/PetsContainer'
+ import PetDetail from './components/PetDetail';
+-import PetRootOutlet from './components/pages/PetRoot';
++import PetRootOutlet from "./components/pages/PetRoot"
+ 
+ function App() {
+   const router = createBrowserRouter([
+diff --git a/pet-catalog/src/components/Filter.jsx b/pet-catalog/src/components/Filter.jsx
+index 6bcb540..304edbb 100644
+--- a/pet-catalog/src/components/Filter.jsx
++++ b/pet-catalog/src/components/Filter.jsx
+@@ -1,75 +1,75 @@
+ import React, { useState } from 'react';
+ 
+ const Filter = ({ onFilter, onClearFilter }) => {
+-  const [selectedTags, setSelectedTags] = useState([]);
+-  const [statusFilter, setStatusFilter] = useState('');
++    const [selectedTags, setSelectedTags] = useState([]);
++    const [statusFilter, setStatusFilter] = useState('');
+ 
+-  const handleTagChange = (tag) => {
+-    const updatedTags = selectedTags.includes(tag)
+-      ? selectedTags.filter((t) => t !== tag)
+-      : [...selectedTags, tag];
+-    setSelectedTags(updatedTags);
+-  };
++    const handleTagChange = (tag) => {
++        const updatedTags = selectedTags.includes(tag)
++            ? selectedTags.filter((t) => t !== tag)
++            : [...selectedTags, tag];
++        setSelectedTags(updatedTags);
++    };
+ 
+-  const handleStatusChange = (e) => {
+-    setStatusFilter(e.target.value);
+-  };
++    const handleStatusChange = (e) => {
++        setStatusFilter(e.target.value);
++    };
+ 
+-  const applyFilters = () => {
+-    onFilter(selectedTags, statusFilter);
+-  };
++    const applyFilters = () => {
++        onFilter(selectedTags, statusFilter);
++    };
+ 
+-  const clearFilters = () => {
+-    setSelectedTags([]);
+-    setStatusFilter('');
+-    onClearFilter();
+-  };
++    const clearFilters = () => {
++        setSelectedTags([]);
++        setStatusFilter('');
++        onClearFilter();
++    };
+ 
+-  return (
+-    <div className="filter-container">
+-      {/* Filter by Tags (Dropdown) */}
+-      <div className="filter-item">
+-        <label className="filter-label">All Tags:</label>
+-        <div className="dropdown">
+-          <button className="dropbtn">Select Tags</button>
+-          <div className="dropdown-content">
+-            {['Friendly', 'Playful', 'Elegant', 'Intelligent', 'Protective', 'Fluffy'].map((tag) => (
+-              <label key={tag} className="tag-checkbox">
+-                <input
+-                  type="checkbox"
+-                  value={tag}
+-                  checked={selectedTags.includes(tag)}
+-                  onChange={() => handleTagChange(tag)}
+-                />
+-                {tag}
+-              </label>
+-            ))}
+-          </div>
+-        </div>
+-      </div>
++    return (
++        <div className="filter-container">
++            {/* Filter by Tags (Dropdown) */}
++            <div className="filter-item">
++                <label >All Tags:</label>
++                <div className="dropdown">
++                    <button className="dropbtn">Select Tags</button>
++                    <div className="dropdown-content">
++                        {['Friendly', 'Playful', 'Elegant', 'Intelligent', 'Protective', 'Fluffy'].map((tag) => (
++                            <label key={tag} className="tag-checkbox">
++                                <input
++                                    type="checkbox"
++                                    value={tag}
++                                    checked={selectedTags.includes(tag)}
++                                    onChange={() => handleTagChange(tag)}
++                                />
++                                {tag}
++                            </label>
++                        ))}
++                    </div>
++                </div>
++            </div>
+ 
+-      {/* Filter by Status */}
+-      <div className="filter-item">
+-        <label className="filter-label">Status:</label>
+-        <select
+-          value={statusFilter}
+-          onChange={handleStatusChange}
+-          className="status-dropdown"
+-        >
+-          <option value="">All Status</option>
+-          <option value="available">Available</option>
+-          <option value="pending">Pending</option>
+-          <option value="sold">Sold</option>
+-        </select>
+-      </div>
++            {/* Filter by Status */}
++            <div className="filter-item">
++                <label>Status:</label>
++                <select
++                    value={statusFilter}
++                    onChange={handleStatusChange}
++                    className="status-dropdown"
++                >
++                    <option value="">All Status</option>
++                    <option value="available">Available</option>
++                    <option value="pending">Pending</option>
++                    <option value="sold">Sold</option>
++                </select>
++            </div>
+ 
+-      {/* Apply and Clear Filters buttons */}
+-      <div className="filter-item filter-buttons">
+-        <button onClick={applyFilters}>Apply Filters</button>
+-        <button onClick={clearFilters}>Clear Filters</button>
+-      </div>
+-    </div>
+-  );
++            {/* Apply and Clear Filters buttons */}
++            <div className="filter-item filter-buttons">
++                <button onClick={applyFilters}>Apply Filters</button>
++                <button onClick={clearFilters}>Clear Filters</button>
++            </div>
++        </div>
++    );
+ };
+ 
+ export default Filter;
+diff --git a/pet-catalog/src/index.css b/pet-catalog/src/index.css
+index 1bf39ed..e27792b 100644
+--- a/pet-catalog/src/index.css
++++ b/pet-catalog/src/index.css
+@@ -93,10 +93,6 @@ h4 {
+   margin: 0.75rem 0;
+ }
+ 
+-.pet-item-description {
+-  margin: 1rem;
+-}
+-
+ .pet-item-price {
+   display: inline-block;
+   background-color: #312c1d;
+@@ -299,10 +295,6 @@ h4 {
+   color: var(--color-primary-800);
+ }
+ 
+-
+-/* index.css */
+-
+-/* Filter container */
+ .filter-container {
+   display: flex;
+   align-items: center;
+@@ -311,6 +303,10 @@ h4 {
+   margin-bottom: 20px;
+ }
+ 
++.filter-container label{
++  margin-right: 10px;
++}
++
+ /* Filter item container */
+ .filter-item {
+   display: flex;

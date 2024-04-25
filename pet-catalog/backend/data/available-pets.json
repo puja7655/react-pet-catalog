@@ -1,0 +1,221 @@
+[
+    {
+      "id": 1,
+      "name": "Golden Retriever",
+      "category": {
+        "id": 1,
+        "name": "Dogs"
+      },
+      "photoUrls": [
+        "petImages/golden retriever.jpg"
+      ],
+      "tags": [
+        {
+          "id": 101,
+          "name": "Friendly"
+        },
+        {
+          "id": 102,
+          "name": "Playful"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 2,
+      "name": "Siamese Cat",
+      "category": {
+        "id": 2,
+        "name": "Cats"
+      },
+      "photoUrls": [
+        "petImages/siamese cat.jpg"
+      ],
+      "tags": [
+        {
+          "id": 201,
+          "name": "Elegant"
+        },
+        {
+          "id": 202,
+          "name": "Intelligent"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 3,
+      "name": "German Shepherd",
+      "category": {
+        "id": 1,
+        "name": "Dogs"
+      },
+      "photoUrls": [
+        "petImages/German_Shepherd.jpg"
+      ],
+      "tags": [
+        {
+          "id": 101,
+          "name": "Friendly"
+        },
+        {
+          "id": 103,
+          "name": "Protective"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 4,
+      "name": "Persian Cat",
+      "category": {
+        "id": 2,
+        "name": "Cats"
+      },
+      "photoUrls": [
+        "petImages/persian-cat.jpg"
+      ],
+      "tags": [
+        {
+          "id": 201,
+          "name": "Elegant"
+        },
+        {
+          "id": 204,
+          "name": "Fluffy"
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": 5,
+      "name": "Labrador Retriever",
+      "category": {
+        "id": 1,
+        "name": "Dogs"
+      },
+      "photoUrls": [
+        "petImages/Labrador-Retriever.jpg"
+      ],
+      "tags": [
+        {
+          "id": 101,
+          "name": "Friendly"
+        },
+        {
+          "id": 102,
+          "name": "Playful"
+        }
+      ],
+      "status": "available"
+    },{
+        "id": 6,
+        "name": "Golden Retriever",
+        "category": {
+          "id": 1,
+          "name": "Dogs"
+        },
+        "photoUrls": [
+          "petImages/golden retriever.jpg"
+        ],
+        "tags": [
+          {
+            "id": 101,
+            "name": "Friendly"
+          },
+          {
+            "id": 102,
+            "name": "Playful"
+          }
+        ],
+        "status": "available"
+      },
+      {
+        "id": 7,
+        "name": "Siamese Cat",
+        "category": {
+          "id": 2,
+          "name": "Cats"
+        },
+        "photoUrls": [
+          "petImages/siamese cat.jpg"
+        ],
+        "tags": [
+          {
+            "id": 201,
+            "name": "Elegant"
+          },
+          {
+            "id": 202,
+            "name": "Intelligent"
+          }
+        ],
+        "status": "available"
+      },
+      {
+        "id": 8,
+        "name": "German Shepherd",
+        "category": {
+          "id": 1,
+          "name": "Dogs"
+        },
+        "photoUrls": [
+          "petImages/German_Shepherd.jpg"
+        ],
+        "tags": [
+          {
+            "id": 101,
+            "name": "Friendly"
+          },
+          {
+            "id": 103,
+            "name": "Protective"
+          }
+        ],
+        "status": "available"
+      },
+      {
+        "id": 9,
+        "name": "Persian Cat",
+        "category": {
+          "id": 2,
+          "name": "Cats"
+        },
+        "photoUrls": [
+          "petImages/persian-cat.jpg"
+        ],
+        "tags": [
+          {
+            "id": 201,
+            "name": "Elegant"
+          },
+          {
+            "id": 204,
+            "name": "Fluffy"
+          }
+        ],
+        "status": "available"
+      },
+      {
+        "id": 10,
+        "name": "Labrador Retriever",
+        "category": {
+          "id": 1,
+          "name": "Dogs"
+        },
+        "photoUrls": [
+          "petImages/Labrador-Retriever.jpg"
+        ],
+        "tags": [
+          {
+            "id": 101,
+            "name": "Friendly"
+          },
+          {
+            "id": 102,
+            "name": "Playful"
+          }
+        ],
+        "status": "available"
+      }
+  ]
